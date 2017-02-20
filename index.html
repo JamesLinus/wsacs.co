@@ -71,7 +71,7 @@
 			<div id="bg">
 				<div class="video-background">
 					<div class="video-foreground">
-					  <iframe src="https://www.youtube.com/embed/SdMqV4h9kVg?controls=0&showinfo=0&rel=0&autoplay=1&loop=1" frameborder="0" allowfullscreen></iframe>
+					  <iframe id="ytplayer" src="https://www.youtube.com/embed/nY4uOZrzv0s?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&iv_load_policy=3&list=PL47m6s4H6I7BIMT3r0xiK64Zkb4ioob3R&enablejsapi=1" frameborder="0" allowfullscreen></iframe>
 					</div>
 				</div>
 			</div>
@@ -81,6 +81,30 @@
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+		
+		<script>
+			              var tag = document.createElement('script');
+
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        var player;
+
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('ytplayer', {
+                events: {
+                    'onReady': onPlayerReady
+                }
+            });
+        }
+
+        function onPlayerReady() {
+            player.playVideo();
+            // Mute!
+            player.mute();
+        }
+		</script>
 
 	</body>
 </html>
