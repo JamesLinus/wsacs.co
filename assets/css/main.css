@@ -1105,7 +1105,7 @@
 
 		#bg:before {
 			-moz-transition: background-color 2.5s ease-in-out;
-			-webkit-transition: background-color 2.5s ease-in-out;
+			-webkit-transition: background-color 2.5s ease-in-out;*
 			-ms-transition: background-color 2.5s ease-in-out;
 			transition: background-color 2.5s ease-in-out;
 			-moz-transition-delay: 0.75s;
@@ -1235,13 +1235,12 @@
 
 			#header > *:before {
 				content: '';
-				display: block;
+				display: none;
 				position: absolute;
 				top: calc(-3.5rem - 1px);
 				left: calc(50% - 1px);
 				width: 1px;
 				height: calc(3.5rem + 1px);
-				background: #ffffff;
 			}
 
 		#header > :first-child {
@@ -1267,8 +1266,6 @@
 		#header .content {
 			border-style: solid;
 			border-color: #ffffff;
-			border-top-width: 1px;
-			border-bottom-width: 1px;
 			max-width: 100%;
 		}
 
@@ -1406,6 +1403,7 @@
 				width: 4.75rem;
 				height: 4.75rem;
 				line-height: 4.75rem;
+				display: none;
 			}
 
 				#header .logo .icon:before {
